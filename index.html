@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List App</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <img src="https://cdn-icons-png.flaticon.com/512/3176/3176363.png" alt="ToDo" style="width:40px;vertical-align:middle;margin-right:10px;">
+            My ToDo List
+        </h1>
+        <div class="input-card">
+            <input type="text" id="taskInput" placeholder="Add a new task..." autocomplete="off">
+            <button id="timerBtn" class="icon-btn" title="Set Timer">
+                <i class="fa-solid fa-clock"></i>
+            </button>
+            <button id="addTaskBtn" class="add-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <!-- Timer Modal -->
+    <div id="timerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h3>Set Timer</h3>
+            <div class="timer-inputs">
+                <input type="number" id="daysInput" min="0" placeholder="Days">
+                <input type="number" id="hoursInput" min="0" max="23" placeholder="Hours">
+                <input type="number" id="minutesInput" min="0" max="59" placeholder="Minutes">
+            </div>
+            <button id="saveTimerBtn" class="save-btn">Save Timer</button>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+    <audio id="snoozeSound" src="scripts/snooze.mp3" preload="auto" loop></audio>
+</body>
+</html>
